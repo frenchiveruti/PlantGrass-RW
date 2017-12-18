@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-	<name>PlantGrass - B18</name>
+	<name>Growable Grass - B18</name>
 	<author>frenchiveruti</author>
-	<url>TBD</url>
+	<url>https://ludeon.com/forums/index.php?topic=37719.0</url>
 	<targetVersion>0.18.0</targetVersion>
 	<description>
-		Mod Version: 18.00.01.00
-		Simple mod that allows the user to plant grass for his animals.</description>
+		Mod Version: 18.00.02.00
+		Simple mod that allows the user to plant grass for his animals.
+	
+	Changes for v18.00.02.00
+		Instroduced ModCheck.
+		ModCheck will now look out for Vegetable Garden and RF Wild Planting. If found will trigger error.
+		
+	</description>
 </ModMetaData>

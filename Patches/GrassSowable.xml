@@ -1,10 +1,35 @@
 <Patch>
-	<Operation Class="PatchOperationAdd">
-		<xpath>/Defs/ThingDef[defName = "PlantGrass"]/plant</xpath>
-		<value>
-			<sowTags>
-				<li>Ground</li>
-			</sowTags>
-		</value>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="ModCheck.isModLoaded">
+				<modName>VGP Vegetable Garden</modName>
+				<yourMod>Growable Grass</yourMod>
+				<incompatible>true</incompatible>
+				<errorOnFail>true</errorOnFail>
+				<customMessageFail>Vegetable Garden already adds growable Grass, disable Growable Grass Mod</customMessageFail>
+				<customMessageSuccess>Growable Grass: Vegetable Garden NOT FOUND, this is GOOD!</customMessageSuccess>
+			</li>
+			<li Class="ModCheck.isModLoaded">
+				<modName>[RF] Wild Cultivation [b18]</modName>
+				<yourMod>Growable Grass</yourMod>
+				<incompatible>true</incompatible>
+				<errorOnFail>true</errorOnFail>
+				<customMessageFail>RF Wild Cultivation already adds growable Grass, disable Growable Grass Mod</customMessageFail>
+				<customMessageSuccess>Growable Grass: RF Wild Cultivation NOT FOUND, this is GOOD!</customMessageSuccess>
+			</li>
+			<li Class="ModCheck.FindFile">
+				<modName>Core</modName>
+				<file>Plants_Wild_General.xml</file>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "PlantGrass"]/plant</xpath>
+				<value>
+					<sowTags>
+						<li>Ground</li>
+					</sowTags>
+				</value>
+			</li>
+		</operations>
 	</Operation>
 </Patch>
